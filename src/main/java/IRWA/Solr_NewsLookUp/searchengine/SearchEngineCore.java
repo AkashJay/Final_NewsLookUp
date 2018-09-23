@@ -13,5 +13,14 @@ public class SearchEngineCore {
 		newsCore = new  HttpSolrClient.Builder("http://localhost:8983/solr/SrilankanNewsLookUP").build();
 		System.out.println("Solr Client created "+((HttpSolrClient)newsCore).getBaseURL());
 	}
+	
+	
+	public static SearchEngineCore getInstance() {
+		return instance;
+	}
+	
+	public SolrClient getNewsClient() {
+		return newsCore;
+	}
 
 }
